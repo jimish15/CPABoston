@@ -1,0 +1,19 @@
+body
+{
+	padding: 50px;
+	font-family: Times New Roman;
+}
+
+.flag
+{
+	padding: 80px 15px;
+	text-align: center;
+}
+
+.nav-link
+{
+	margin-left: 15px;
+	font-size: 18px;
+	font-family: Times New Roman;
+}
+
