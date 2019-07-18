@@ -3,6 +3,7 @@
 $page_title = "User Authentication - Homepage";
 include_once 'partials/headers.php';
 include_once 'partials/parseProfile.php';
+include ("resource/formDB.php");
 
 ?>
 
@@ -11,7 +12,7 @@ include_once 'partials/parseProfile.php';
     #eligibilityTable{
   		font-family: Times New Roman;
   		border-collapse: collapse;
- 		width: 70%;
+ 		width: 100%;
  		
 	}
 
@@ -38,8 +39,8 @@ include_once 'partials/parseProfile.php';
 	#cpaTable{
   		font-family: Times New Roman;
   		border-collapse: collapse;
- 		width: 30%;
- 		
+ 		width: 20%;
+ 		margin-top: -122px;
  
 	}
 
@@ -47,6 +48,11 @@ include_once 'partials/parseProfile.php';
   		border: 1px solid #ddd;
   		padding: 8px;
   		text-align: left;
+  	
+	}
+
+	#cpaTable td {
+		height: 72px;
 	}
 
 	#cpaTable tr:nth-child(even){background-color: #f2f2f2;}
@@ -80,18 +86,21 @@ include_once 'partials/parseProfile.php';
 	.newEligibilityBtn:hover{background-color:rgba(251, 77, 66, 0.4);}
 
 	.newCpaBtn{
-		width: 200px;
+		width: 150px;
 		padding: 5px; 
 		cursor: pointer; 
-		font-size: 20px; 
+		font-size: 15px; 
 		background-color:rgba(251, 77, 66, 0.6); 
 		color: #071822; font-weight: bold; 
 		border: 2px solid #071822; 
-		border-radius: 10px; 
-		float: right; 
+		border-radius: 10px;  
 		text-align: center; 
 		margin-bottom: 15px; 
 		margin-top: 5px;
+		float: right;
+
+
+
 
 	}
 
@@ -99,13 +108,13 @@ include_once 'partials/parseProfile.php';
 
 	.eligibilityTable{
 		float: left;
-		width: 90%;
+		width: 100%;
 		
 	}
 
 	.cpaTable{
 		float: right;
-		width: 30%;
+		width: 100%;
 		
 		
 	}
@@ -133,7 +142,6 @@ include_once 'partials/parseProfile.php';
 
 			<h1 class="lead" style="font-size: 40px; text-align: left;">Welcome <?php if(isset($_SESSION['username'])) echo $_SESSION['username']; ?></h1><hr>
 
-			<button class=newEligibilityBtn onclick="window.location.href='eligibility.php'">New Eligibility Form</button>
 
 		</div>
 
@@ -146,6 +154,8 @@ include_once 'partials/parseProfile.php';
 		
 		</div>
 
+		<button class=newEligibilityBtn onclick="window.location.href='eligibilityForm.php'" style="margin-top: 30px;">Create New Application</button>
+
 		<div>
 			<h3 id="yourform" style="text-align: left; margin-top: 40px; width: 250px; background-color: #071822; color: #fff; padding: 10px; border-radius: 5px 0px 25px 5px;">Your Forms</h3>
 
@@ -157,122 +167,41 @@ include_once 'partials/parseProfile.php';
 			<table id="eligibilityTable" style="float: left;">
 				
 				<tr>
-					<th>Project Name</th>
-					<th>Email</th>
-					<th>Eligibility Status</th>
+					<th>ID</th>
+					<th style="margin-right: 50px;">Project Name</th>
+					<th style="margin-right: 20%;">Email</th>
+					<th>CPA Form</th>
+					<th></th>
+					
 				</tr>
 
-				<?php
-
-					$conn = mysqli_connect("localhost","root","","forms");
-					if($conn-> connect_error){
-						die("Connection failed:".$conn-> connect_error);
-					}
-
-		
-					
-					$result = mysqli_query($conn,"SELECT email, projectName,eligibilitystatus FROM eligibilityform WHERE email = \"$email\"");
-					
-					if(mysqli_num_rows($result) > 0){
-						
-						while($row = mysqli_fetch_assoc($result)){
-						
-						
-						?>
-						<tr>
-							<td><?php echo $row["projectName"];?></td>
-							<td><?php echo $row["email"];?></td>
-							<td><?php echo $row["eligibilitystatus"];?></td>
-							
-
-						</tr>
-						<?php
-
-						}
-						
-						
-					}
-
-					
-
-					mysqli_close($conn);
-
-					
-				?>
-
-			</table>
-
-		</div>
-
-		<div class="cpaTable">
-			
-			<table id="cpaTable" style="float: right;">
-				
 				<tr>
-					<th> CPA Status</th>
-				</tr>
-
-				<?php
-
-					$conn = mysqli_connect("localhost","root","","forms");
-					if($conn-> connect_error){
-						die("Connection failed:".$conn-> connect_error);
-					}
-
 					
-					$sql = "SELECT email cpastatus FROM cpaform WHERE email = \"$email\"";
+					<?php
 
-					$result = $conn-> query($sql);
-	
+					$sel = "SELECT `id`, `projectName`, `email` FROM `eform` WHERE `email` = \"$email\"";
 
-					if($result-> num_rows > 0){
-						
-						
-							while($row = $result-> fetch_assoc()){
+					$qrydisplay = mysqli_query($connect, $sel);
 
-								echo "<tr><td>".$row["cpastatus"]."</td></tr>";
-							}
-							echo "</table>";
-						
-					}
-					else {
-						echo "<tr><td>Not Submitted</td></tr>";
+					while($row = mysqli_fetch_array($qrydisplay))
+					{
+						$id = $row['id'];
+						$projectName = $row['projectName'];
+						$email = $row['email'];
+
+						echo "<tr><td>".$id."</td><td>".$projectName."</td><td>".$email."</td><td></td><td> <a href='view.php?view=$id'>View</a></td></tr>";
+
 					}
 
-					$conn-> close();
-				?>
+					?>
+
+				</tr>
 
 			</table>
 
-
 		</div>
-
 		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		
-			
-			
-
-			
-
-			
-			
 	<?php endif ?>
 
 

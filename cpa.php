@@ -42,7 +42,7 @@ include_once 'resource/formDatabase.php';
 			<div class="form-group">
 				<label style="font-weight: bold;" for="projectField">Project Name</label>
 				<input type="text" name="projectName" class="form-control" id="projectField"
-				value="<?php if(isset($projectName)) echo $projectName; ?>">
+				placeholder="Your Answer">
 			</div>
 
 			<!-- Should be a textbox size 250 -->

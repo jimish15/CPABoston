@@ -30,7 +30,7 @@ include_once 'partials/parseProfile.php';
 				
 				<div class="form-group">
 					<label for="emailField">Email</label>
-					<input type="text" name="email" class="form-control" id="emailField" value="<?php if(isset($email)) echo $email; ?>">
+					<input type="text" name="email" class="form-control" id="emailField" value="<?php if(isset($email)) echo $email; ?> "disabled>
 				</div>
 				
 
