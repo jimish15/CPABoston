@@ -86,18 +86,16 @@ include ("resource/formDB.php");
 	.newEligibilityBtn:hover{background-color:rgba(251, 77, 66, 0.4);}
 
 	.newCpaBtn{
-		width: 150px;
+		width: 100px;
 		padding: 5px; 
 		cursor: pointer; 
 		font-size: 15px; 
 		background-color:rgba(251, 77, 66, 0.6); 
 		color: #071822; font-weight: bold; 
 		border: 2px solid #071822; 
-		border-radius: 10px;  
+		border-radius: 5px;  
 		text-align: center; 
-		margin-bottom: 15px; 
-		margin-top: 5px;
-		float: right;
+		float: center;
 
 
 
@@ -106,18 +104,7 @@ include ("resource/formDB.php");
 
 	.newCpaBtn:hover{background-color:rgba(251, 77, 66, 0.4);}
 
-	.eligibilityTable{
-		float: left;
-		width: 100%;
-		
-	}
 
-	.cpaTable{
-		float: right;
-		width: 100%;
-		
-		
-	}
 
 </style>
 
@@ -145,7 +132,7 @@ include ("resource/formDB.php");
 
 		</div>
 
-		<div style="margin-top: 100px; float: center;">
+		<div style="margin-top: 50px; float: center;">
 
 			<h5 style="font-weight: bold;">Please follow the instruction below prior to completeing the forms.</h5>
 
@@ -154,7 +141,7 @@ include ("resource/formDB.php");
 		
 		</div>
 
-		<button class=newEligibilityBtn onclick="window.location.href='eligibilityForm.php'" style="margin-top: 30px;">Create New Application</button>
+		<button class=newEligibilityBtn onclick="window.location.href='eligibilityForm.php'" style="margin-top: 30px;">Create New Form</button>
 
 		<div>
 			<h3 id="yourform" style="text-align: left; margin-top: 40px; width: 250px; background-color: #071822; color: #fff; padding: 10px; border-radius: 5px 0px 25px 5px;">Your Forms</h3>
@@ -170,8 +157,9 @@ include ("resource/formDB.php");
 					<th>ID</th>
 					<th style="margin-right: 50px;">Project Name</th>
 					<th style="margin-right: 20%;">Email</th>
+					<th>Eligibility Form</th>
 					<th>CPA Form</th>
-					<th></th>
+					<th>View CPA Form</th>
 					
 				</tr>
 
@@ -189,7 +177,7 @@ include ("resource/formDB.php");
 						$projectName = $row['projectName'];
 						$email = $row['email'];
 
-						echo "<tr><td>".$id."</td><td>".$projectName."</td><td>".$email."</td><td></td><td> <a href='view.php?view=$id'>View</a></td></tr>";
+						echo "<tr><td>".$id."</td><td>".$projectName."</td><td>".$email."</td><td><a href='view.php?view=$id'>View Eligibility Form</a></td><td><a href='cpaForm.php?cpaForm=$id'><input type='submit' class='newCpaBtn' value='CPA Form'></a></td><td><a href='cpaView.php?cpaView=$id'>View CPA Form</a></td></tr>";
 
 					}
 
