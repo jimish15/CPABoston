@@ -29,11 +29,29 @@ if(empty($form_errors))
 
 	while($row = $statement->fetch())
 	{
+
 		$id = $row['id'];
 		$hashed_password = $row['password'];
 		$username = $row['username'];
 		$activated = $row['activated'];
+		$role = $row['role']; 
 
+		if($role == 'admin') {
+			redirectTo('admin');
+		} else {
+			echo $welcome = "<script type=\"text/javascript\">
+							swal({
+							title: \"Welcome Back $username\",
+							text: \"You're being logged in.\",
+							type: 'success',
+							timer: 3000,
+							showConfirmButton: false });
+
+							setTimeout(function(){
+								window.location.href = 'index.php';
+								}, 3000);
+					</script>";
+		}
 
 		if($activated === "0"){
 
