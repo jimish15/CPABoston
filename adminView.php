@@ -1,10 +1,10 @@
 <?php
 $page_title = "User Authentication - Eligibility Form Page";
-include_once 'partials/headers.php';
+include_once 'partials/adminHeaders.php';
 include_once 'partials/parseProfile.php';
 include ("resource/formDB.php");
 
-$getid = $_GET['view'];
+$getid = $_GET['adminView'];
 
 $selview = "SELECT * FROM `eform` WHERE `id` = '$getid'";
 $qry = mysqli_query($connect, $selview);
@@ -82,7 +82,22 @@ if(isset($_POST['updateview']))
 
 	if($qry)
 	{
-		header("location: index.php");
+		header("location: admin.php");
+	}
+}
+
+if(isset($_POST['approveBtn'])) {
+	$upStatus = $_POST['upStatus'];
+	$seleditt = "UPDATE `eform` SET `eStatus`='Approved' Where `id`='$id'";
+	$qry = mysqli_query($connect, $seleditt);
+	if($qry) {
+		header("location: admin.php");
+	}
+} elseif(isset($_POST['rejectBtn'])) {
+	$seleditt = "UPDATE `eform` SET `eStatus`='Rejected' WHERE `id`='$id'";
+	$qry = mysqli_query($connect, $seleditt);
+	if($qry) {
+		header("location: admin.php");
 	}
 }
 
@@ -92,7 +107,7 @@ if(isset($_POST['updateview']))
 
 	<div>
 
-		<a href="index.php" style="float: right; margin-top: 15px;">Back</a>
+		<a href="admin.php" style="float: right; margin-top: 15px;">Back</a>
 
 		<h2 style="margin-top: 60px; padding-top: 10px;">CPA Boston - Eligibility & Information Form</h2><hr>
 
@@ -102,7 +117,7 @@ if(isset($_POST['updateview']))
 
 	<div style="padding-right: 100px;">
 		
-		<form action="formPDF.php" method="POST" enctype="multipart/form-data">
+		<form action="" method="POST" enctype="multipart/form-data">
 
 			<div style="display: none;">
 				<label for="idField">Form ID:<font color="red"> *</font></label>
@@ -275,7 +290,7 @@ if(isset($_POST['updateview']))
 			- thadine.brown@boston.gov / 617-635-0545</br>
 			- allyson.quinn@boston.gov / 617-635-4637</p>
 
-			<a href='formPDF.php?view=$id'><input type='submit' class='pdfBtn' value='Create PDF'></a>
+			
 
 		</form>
 
