@@ -177,13 +177,13 @@ if(isset($_POST['updateview']))
 
 if(isset($_POST['approveBtn'])) {
 	$upStatus = $_POST['upStatus'];
-	$seleditt = "UPDATE `eform` SET `eStatus`='Approved' Where `id`='$id'";
+	$seleditt = "UPDATE `eform` SET `cStatus`='Approved' Where `id`='$id'";
 	$qry = mysqli_query($connect, $seleditt);
 	if($qry) {
 		header("location: admin.php");
 	}
 } elseif(isset($_POST['rejectBtn'])) {
-	$seleditt = "UPDATE `eform` SET `eStatus`='Rejected' WHERE `id`='$id'";
+	$seleditt = "UPDATE `eform` SET `cStatus`='Rejected' WHERE `id`='$id'";
 	$qry = mysqli_query($connect, $seleditt);
 	if($qry) {
 		header("location: admin.php");
@@ -252,8 +252,8 @@ if(isset($_POST['approveBtn'])) {
 			</div>
 			
 			<div class="ediv">
-				<label for="projectZipField">Project Zip-Code:<font color="red"> *</font></label>
-				<input type="text" name="upcProjectZip" class="form-control" id="projectZipField"  value="<?php echo $cProjectName; ?>" readonly>
+				<label for="contactPersonTitleField">Contact Person & Title:<font color="red"> *</font></label>
+				<input type="text" name="upcontactPersonTitle" class="form-control" id="contactPersonTitleField"  value="<?php echo $cProjectName; ?>" readonly>
 			</div>
 			
 			<div class="ediv">
@@ -261,10 +261,6 @@ if(isset($_POST['approveBtn'])) {
 				<input type="text" name="upcPhoneNumber" class="form-control" id="phoneNumberField"  value="<?php echo $cProjectName; ?>" readonly>
 			</div>
 
-			<div class="ediv">
-				<label for="contactPersonTitleField">Contact Person & Title:<font color="red"> *</font></label>
-				<input type="text" name="upcontactPersonTitle" class="form-control" id="contactPersonTitleField"  value="<?php echo $cProjectName; ?>" readonly>
-			</div>
 			
 			<div class="ediv">
 				<label>Category (Pick the one that best describes your project):<font color="red"> *</font></label><br/>
@@ -436,8 +432,6 @@ if(isset($_POST['approveBtn'])) {
 			<p>- christine.poff@boston.gov / 617-635-0277</br>
 			- thadine.brown@boston.gov / 617-635-0545</br>
 			- allyson.quinn@boston.gov / 617-635-4637</p>
-
-			<input type="submit" name="submitCpaBtn" class="btn btn-primary" style="border-radius: 10px; padding-left: 35px; padding-right: 35px; margin-top: 25px; background-color: #071822; color: #fff; font-size: 20px;" value="Submit" onclick="errorFunction();">
 			
 
 		</form>

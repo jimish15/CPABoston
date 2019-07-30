@@ -119,32 +119,32 @@ if(isset($_POST['submitEligibilityBtn']))
 			
 			<div class="ediv">
 				<label for="projectStreetAddressField">Project Street Address:<font color="red"> *</font></label>
-				<input type="text" name="projectStreetAddress" class="form-control" id="projectStreetAddressField" placeholder="Enter Your Answer" maxlength="200" required>
+				<input type="text" name="projectStreetAddress" class="form-control" id="projectStreetAddressField" placeholder="Enter Your Answer" maxlength="200">
 			</div>
 			
 			<div class="ediv">
 				<label for="projectNeighborhoodField">Project Neighborhood:<font color="red"> *</font></label>
-				<input type="text" name="projectNeighborhood" class="form-control" id="projectNeighborhoodField" placeholder="Enter Your Answer" maxlength="200" required>
+				<input type="text" name="projectNeighborhood" class="form-control" id="projectNeighborhoodField" placeholder="Enter Your Answer" maxlength="200">
 			</div>
 			
 			<div class="ediv">
 				<label for="projectZipField">Project Zip-Code:<font color="red"> *</font></label>
-				<input type="text" name="projectZip" class="form-control" id="projectZipField" placeholder="Enter Your Answer" maxlength="5" required>
+				<input type="text" name="projectZip" class="form-control" id="projectZipField" placeholder="Enter Your Answer" maxlength="5">
 			</div>
 			
 			<div class="ediv">
 				<label for="applicantOrgField">Applicant Organization:<font color="red"> *</font></label>
-				<input type="text" name="applicantOrg" class="form-control" id="applicantOrgField" placeholder="Enter Your Answer" maxlength="100" required>
+				<input type="text" name="applicantOrg" class="form-control" id="applicantOrgField" placeholder="Enter Your Answer" maxlength="100">
 			</div>
 
 			<div class="ediv">
 				<label for="contactPersonTitleField">Contact Person & Title:<font color="red"> *</font></label>
-				<input type="text" name="contactPersonTitle" class="form-control" id="contactPersonTitleField" placeholder="Enter Your Answer" maxlength="100" required>
+				<input type="text" name="contactPersonTitle" class="form-control" id="contactPersonTitleField" placeholder="Enter Your Answer" maxlength="100">
 			</div>
 			
 			<div class="ediv">
 				<label for="phoneNumberField">Phone Number:<font color="red"> *</font></label>
-				<input type="text" name="phoneNumber" class="form-control" id="phoneNumberField" placeholder="Enter Your Answer" maxlength="10" required>
+				<input type="text" name="phoneNumber" class="form-control" id="phoneNumberField" placeholder="Enter Your Answer" maxlength="10">
 			</div>
 
 
@@ -154,22 +154,22 @@ if(isset($_POST['submitEligibilityBtn']))
 			
 			<div class="ediv">
 				<label for="amountRequestedField">Amount Requested:<font color="red"> *</font></label>
-				<input type="text" name="amountRequested" class="form-control" id="amountRequestedField" placeholder="Enter Your Answer" maxlength="10" required>
+				<input type="text" name="amountRequested" class="form-control" id="amountRequestedField" placeholder="Enter Your Answer" maxlength="10">
 			</div>
 
 			<div class="ediv">
 				<label for="totalProjectCostField">Total Project Cost:<font color="red"> *</font></label>
-				<input type="text" name="totalProjectCost" class="form-control" id="totalProjectCostField" placeholder="Enter Your Answer" maxlength="10" required>
+				<input type="text" name="totalProjectCost" class="form-control" id="totalProjectCostField" placeholder="Enter Your Answer" maxlength="10">
 			</div>
 
 			<div class="ediv">
 				<label for="fundingNeedField">Why is Funding Needed:<font color="red"> *</font></label>
-				<input type="text" name="fundingNeed" class="form-control" id="fundingNeedField" placeholder="Enter Your Answer" maxlength="1000" required>
+				<input type="text" name="fundingNeed" class="form-control" id="fundingNeedField" placeholder="Enter Your Answer" maxlength="1000">
 			</div>
 
 			<div class="ediv">
 				<label for="fundingSourcesField">Other Funding Sources or in-kind support(not whether received, decision pending, or will apply):<font color="red"> *</font></label>
-				<input type="text" name="fundingSources" class="form-control" id="fundingSourcesField" placeholder="Enter Your Answer" maxlength="200" required>
+				<input type="text" name="fundingSources" class="form-control" id="fundingSourcesField" placeholder="Enter Your Answer" maxlength="200">
 			</div>
 
 			<div class="ediv">
@@ -186,7 +186,7 @@ if(isset($_POST['submitEligibilityBtn']))
 
 			<div class="ediv">
 				<label for="constructionDesignField">What do you hope to do? Describe construction or design details:<font color="red"> *</font></label>
-				<input type="text" name="constructionDesign" class="form-control" id="constructionDesignField" placeholder="Enter Your Answer" maxlength="250" required>
+				<input type="text" name="constructionDesign" class="form-control" id="constructionDesignField" placeholder="Enter Your Answer" maxlength="250">
 			</div>
 
 
@@ -198,33 +198,33 @@ if(isset($_POST['submitEligibilityBtn']))
 
 			<div class="ediv">
 				<label for="propertyOwnerField">Who is the property owner and manager?<font color="red"> *</font></label>
-				<input type="text" name="propertyOwner" class="form-control" id="propertyOwnerField" placeholder="Enter Your Answer" maxlength="50" required>
+				<input type="text" name="propertyOwner" class="form-control" id="propertyOwnerField" placeholder="Enter Your Answer" maxlength="50">
 			</div>
 
 			<div class="ediv">
-				<label for="uploadAgreementField">Pleas upload an agreement with the owner aanswering the questions listed above or provide site control documentation of you are not the property owner.<font color="red"> *</font></label>
+				<label for="uploadAgreementField">Please upload an agreement with the owner aanswering the questions listed above or provide site control documentation of you are not the property owner.<font color="red"> *</font></label>
 				<small style="font-weight: bold;">Please upload only PDF's or DOC's</small></br>
-				<input type="file" name="uploadAgreement" id="uploadAgreementField" required>
+				<input type="file" name="uploadAgreement" id="uploadAgreementField">
 			</div>
 
 			<h4 style="width: 300px; background-color: #071822; color: #fff; padding: 10px; border-radius: 0px 0px 25px 0px; margin-top: 25px; margin-bottom: 25px;">Project Timeline</h4>
 
 			<div class="ediv">
 				<label for="expectedStartDateField">Expected Start Date:<font color="red"> *</font></label></br>
-				<input type="text" name="expectedStartDate" class="form-control" id="expectedStartDateField" placeholder="MM/DD/YYYY" maxlength="10" required>
+				<input type="text" name="expectedStartDate" class="form-control" id="expectedStartDateField" placeholder="MM/DD/YYYY" maxlength="10">
 			</div>
 
 
 			<div class="ediv">
 				<label for="expectedCompleteDateField">Expected Completion Date:<font color="red"> *</font></label>
-				<input type="text" name="expectedCompleteDate" class="form-control" id="expectedCompleteDateField" placeholder="MM/DD/YYYY" maxlength="10" required>
+				<input type="text" name="expectedCompleteDate" class="form-control" id="expectedCompleteDateField" placeholder="MM/DD/YYYY" maxlength="10">
 			</div>
 
 			<div class="ediv">
 				<label for="pickCategoryField">Category (Pick the one that best describes your project):<font color="red"> *</font></label><br/>
-				<input type="radio" name="pickCategory" value="Parks, Open Space, or Outdoor Recreation" required>Parks, Open Space, or Outdoor Recreation<br/>
-				<input type="radio" name="pickCategory" value="Historic Preservation" required>Historic Preservation<br/>
-				<input type="radio" name="pickCategory" value="Affordable Housing" required>Affordable Housing<br/>
+				<input type="radio" name="pickCategory" value="Parks, Open Space, or Outdoor Recreation">Parks, Open Space, or Outdoor Recreation<br/>
+				<input type="radio" name="pickCategory" value="Historic Preservation">Historic Preservation<br/>
+				<input type="radio" name="pickCategory" value="Affordable Housing">Affordable Housing<br/>
 			</div>
 
 			<h4 style="width: 300px; background-color: #071822; color: #fff; padding: 10px; border-radius: 0px 0px 25px 0px; margin-top: 25px; margin-bottom: 25px;">Parks, Open Space & Outoor Recreation</h4>
@@ -247,37 +247,37 @@ if(isset($_POST['submitEligibilityBtn']))
 
 			<div class="ediv">
 				<label for="intendedUsersField">Who are the intended users of your proposed project?<font color="red"> *</font></label>
-				<input type="text" name="intendedUsers" class="form-control" id="intendedUsersField" placeholder="Enter Your Answer" maxlength="250" required>
+				<input type="text" name="intendedUsers" class="form-control" id="intendedUsersField" placeholder="Enter Your Answer" maxlength="250">
 			</div>
 
 			<div class="ediv">
 				<label for="generalPublicField">If your open space will not be open to the general public, please explain:<font color="red"> *</font></label>
-				<input type="text" name="generalPublic" class="form-control" id="generalPublicField" placeholder="Enter Your Answer" maxlength="250" required>
+				<input type="text" name="generalPublic" class="form-control" id="generalPublicField" placeholder="Enter Your Answer" maxlength="250">
 			</div>
 
 			<div class="ediv">
 				<label for="masterPlanField">Do you have a master plan or management plan:<font color="red"> *</font></label><br/>
-				<input type="radio" name="masterPlan[]" id="masterPlanField" value="Yes" required>Yes<br/>
-				<input type="radio" name="masterPlan[]" id="masterPlanField" value="No" required>No<br/>
-				<input type="radio" name="masterPlan[]" id="masterPlanField" value="Other" required>Other<br/>
+				<input type="radio" name="masterPlan[]" id="masterPlanField" value="Yes">Yes<br/>
+				<input type="radio" name="masterPlan[]" id="masterPlanField" value="No">No<br/>
+				<input type="radio" name="masterPlan[]" id="masterPlanField" value="Other">Other<br/>
 				<input type="text" name="masterPlan[Other]" class="form-control" id="masterPlanField" placeholder="Enter Your Answer" maxlength="50">			
 			</div>
 
 			<div class="ediv">
 				<label for="maintenanceField">Who will do ongoing maintenance after project completion?<font color="red"> *</font></label>
-				<input type="text" name="maintenance" class="form-control" id="maintenanceField" placeholder="Enter Your Answer" maxlength="50"required>
+				<input type="text" name="maintenance" class="form-control" id="maintenanceField" placeholder="Enter Your Answer" maxlength="50">
 			</div>
 			
 			<div class="ediv">
 				<label for="historicLandscapeField">Is your project part of a historic landscape?<font color="red"> *</font></label>
-				<input type="text" name="historicLandscape" class="form-control" id="historicLandscapeField" placeholder="Enter Your Answer" maxlength="50" required>
+				<input type="text" name="historicLandscape" class="form-control" id="historicLandscapeField" placeholder="Enter Your Answer" maxlength="50">
 			</div>
 
 			<div class="ediv">
 				<label for="publicArtField">Does your project include public art?<font color="red"> *</font></label><br/>
-				<input type="radio" name="publicArt[]" id="publicArtField" value="Yes" required>Yes<br/>
-				<input type="radio" name="publicArt[]" id="publicArtField" value="No" required>No<br/>
-				<input type="radio" name="publicArt[]" id="publicArtField" value="Other" required>Other<br/>
+				<input type="radio" name="publicArt[]" id="publicArtField" value="Yes">Yes<br/>
+				<input type="radio" name="publicArt[]" id="publicArtField" value="No">No<br/>
+				<input type="radio" name="publicArt[]" id="publicArtField" value="Other">Other<br/>
 				<input type="text" name="publicArt[Other]" class="form-control" id="publicArtField" placeholder="Enter Your Answer" maxlength="50">			
 			</div><br/>
 

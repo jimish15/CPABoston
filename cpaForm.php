@@ -64,7 +64,7 @@ if(isset($_POST['submitCpaBtn']))
 	$upcContactPersonTitle = $_POST['upcContactPersonTitle'];
 	$upcPhoneNumber = $_POST['upcPhoneNumber'];
 
-	$cPickCategory = $_POST['upcPickCategory'];
+	$upcPickCategory = $_POST['upcPickCategory'];
 
 	$upcAmountRequested = $_POST['upcAmountRequested'];
 	$upcTotalProjectCost = $_POST['upcTotalProjectCost'];
@@ -121,6 +121,7 @@ if(isset($_POST['submitCpaBtn']))
 	$tname7 = $_FILES["upcUploadBudget"]["tmp_name"];
 	$uploads_dir7 = 'uploads';
 	move_uploaded_file($tname7, $uploads_dir7.'/'.$upcUploadBudget);
+	
 
 
 	$upcUploadIRS = rand(1000,10000)."-".$_FILES["upcUploadIRS"]["name"];
@@ -239,49 +240,49 @@ if(isset($_POST['submitCpaBtn']))
 			
 			<div class="ediv">
 				<label for="projectZipField">Project Zip-Code:<font color="red"> *</font></label>
-				<input type="text" name="upcProjectZip" class="form-control" id="projectZipField" placeholder="Enter Your Answer" maxlength="5" required>
+				<input type="text" name="upcProjectZip" class="form-control" id="projectZipField" placeholder="Enter Your Answer" maxlength="5">
 			</div>
 
 			
 			<div class="ediv">
 				<label for="applicantOrgField">Applicant Organization:<font color="red"> *</font></label>
-				<input type="text" name="upcApplicantOrg" class="form-control" id="applicantOrgField" placeholder="Enter Your Answer" maxlength="200" required>
+				<input type="text" name="upcApplicantOrg" class="form-control" id="applicantOrgField" placeholder="Enter Your Answer" maxlength="200">
 			</div>
 			
 			<div class="ediv">
 				<label for="contactPersonTitleField">Contact Person & Title:<font color="red"> *</font></label>
-				<input type="text" name="upcontactPersonTitle" class="form-control" id="contactPersonTitleField" placeholder="Enter Your Answer" maxlength="100" required>
+				<input type="text" name="upcContactPersonTitle" class="form-control" id="contactPersonTitleField" placeholder="Enter Your Answer" maxlength="100">
 			</div>
 			
 			
 			<div class="ediv">
 				<label for="phoneNumberField">Phone Number:<font color="red"> *</font></label>
-				<input type="text" name="upcPhoneNumber" class="form-control" id="phoneNumberField" placeholder="Enter Your Answer" maxlength="100" required>
+				<input type="text" name="upcPhoneNumber" class="form-control" id="phoneNumberField" placeholder="Enter Your Answer" maxlength="10">
 			</div>
 
 			
 			<div class="ediv">
-				<label>Category (Pick the one that best describes your project):<font color="red"> *</font></label><br/>
-				<input type="radio" name="upcPickCategory" value="Parks, Open Space, or Outdoor Recreation" required>Parks, Open Space, or Outdoor Recreation<br/>
-				<input type="radio" name="upcPickCategory" value="Historic Preservation" required>Historic Preservation<br/>
-				<input type="radio" name="upcPickCategory" value="Affordable Housing" required>Affordable Housing<br/>
+				<label for="pickCategoryField">Category (Pick the one that best describes your project):<font color="red"> *</font></label><br/>
+				<input type="radio" name="upcPickCategory" value="Parks, Open Space, or Outdoor Recreation">Parks, Open Space, or Outdoor Recreation<br/>
+				<input type="radio" name="upcPickCategory" value="Historic Preservation">Historic Preservation<br/>
+				<input type="radio" name="upcPickCategory" value="Affordable Housing">Affordable Housing<br/>
 			</div>
 
 			<h4 style="width: 300px; background-color: #071822; color: #fff; padding: 10px; border-radius: 0px 0px 25px 0px; margin-top: 25px; margin-bottom: 25px;">Funding Request</h4>
 			
 			<div class="ediv">
 				<label for="amountRequestedField">Amount Requested:<font color="red"> *</font></label>
-				<input type="text" name="upcAmountRequested" class="form-control" id="amountRequestedField" placeholder="Enter Your Answer" maxlength="10" required>
+				<input type="text" name="upcAmountRequested" class="form-control" id="amountRequestedField" placeholder="Enter Your Answer" maxlength="10">
 			</div>
 
 			<div class="ediv">
 				<label for="totalProjectCostField">Total Project Cost:<font color="red"> *</font></label>
-				<input type="text" name="upcTotalProjectCost" class="form-control" id="totalProjectCostField" placeholder="Enter Your Answer" maxlength="10" required>
+				<input type="text" name="upcTotalProjectCost" class="form-control" id="totalProjectCostField" placeholder="Enter Your Answer" maxlength="10">
 			</div>
 
 			<div class="ediv">
 				<label for="shortProject2Field">Short Project Description - For The CPA Webpages:<font color="red"> *</font></label>
-				<input type="text" name="upcShortProjectDescription2" class="form-control" id="shortProject2Field" placeholder="Enter Your Answer" maxlength="1000" required>
+				<input type="text" name="upcShortProjectDescription2" class="form-control" id="shortProject2Field" placeholder="Enter Your Answer" maxlength="1000">
 			</div>
 
 			<h4 style="width: 300px; background-color: #071822; color: #fff; padding: 10px; border-radius: 0px 0px 25px 0px; margin-top: 25px; margin-bottom: 25px;">Questions</h4>
@@ -291,52 +292,52 @@ if(isset($_POST['submitCpaBtn']))
 
 			<div class="ediv">
 				<label for="projectSummaryField">1. Project Summary & Anticipated Outcome: Information about your organization is not needed here, just describe what you hope to do (e.g. build 10 units of affordable housing or repair roof) and why this project will make a difference - the outcome.<font color="red"> *</font></label>
-				<input type="text" name="upcProjectSummary" class="form-control" id="projectSummaryField" placeholder="Enter Your Answer" maxlength="200" required>
+				<input type="text" name="upcProjectSummary" class="form-control" id="projectSummaryField" placeholder="Enter Your Answer" maxlength="200">
 			</div>
 
 			<div class="ediv">
 				<label for="needsAssessmentField">2. Needs Assessment: Why do you need the funds? How bad are the existing conditions? What are the neighborhood challenges you hope to address?<font color="red"> *</font></label>
-				<input type="text" name="upcNeedsAssessment" class="form-control" id="projectSummaryField" placeholder="Enter Your Answer" maxlength="200" required>
+				<input type="text" name="upcNeedsAssessment" class="form-control" id="projectSummaryField" placeholder="Enter Your Answer" maxlength="200">
 			</div>
 
 			<div class="ediv">
 				<label for="projectTimelineField">3. Project Implementation / Timeline: Divide your project into three milestones that make sense to you. Attach anticipated completion dates for each stage and cost.<font color="red"> *</font></label>
-				<input type="text" name="upcProjectTimeline" class="form-control" id="projectTimelineField" placeholder="Enter Your Answer" maxlength="200" required>
+				<input type="text" name="upcProjectTimeline" class="form-control" id="projectTimelineField" placeholder="Enter Your Answer" maxlength="200">
 			</div>
 
 			<div class="ediv">
 				<label for="experienceCapacityField">4. Experience & Capacity: Convince us that you have the ability to carry out the steps and oversight needed to complete the project. How have you been a good steward or landlord? Have you done projects like this before? Share your history of caring for the resource.<font color="red"> *</font></label>
-				<input type="text" name="upcExperienceCapacity" class="form-control" id="experienceCapacityField" placeholder="Enter Your Answer" maxlength="200" required>
+				<input type="text" name="upcExperienceCapacity" class="form-control" id="experienceCapacityField" placeholder="Enter Your Answer" maxlength="200">
 			</div>
 
 			<div class="ediv">
 				<label for="organizationalPlanField">5. Organizational Strategy & Plan: How does this project fit into your current programming or capital work and future plans?<font color="red"> *</font></label>
-				<input type="text" name="upcOrganizationalPlan" class="form-control" id="organizationalPlanField" placeholder="Enter Your Answer" maxlength="200" required>
+				<input type="text" name="upcOrganizationalPlan" class="form-control" id="organizationalPlanField" placeholder="Enter Your Answer" maxlength="200">
 			</div>
 
 			<div class="ediv">
 				<label for="publicBenefitField">6. Public Benefit: Who will the project serve?<font color="red"> *</font></label>
-				<input type="text" name="upcPublicBenefit" class="form-control" id="publicBenefitField" placeholder="Enter Your Answer" maxlength="200" required>
+				<input type="text" name="upcPublicBenefit" class="form-control" id="publicBenefitField" placeholder="Enter Your Answer" maxlength="200">
 			</div>
 
 			<div class="ediv">
 				<label for="communitySupportField">7. Community Support and Opposition: List the required community meetings you have had for the project and attendance. If community members have been opposed, let us know why - please be honest!<font color="red"> *</font></label>
-				<input type="text" name="upcCommunitySupport" class="form-control" id="communitySupportField" placeholder="Enter Your Answer" maxlength="200" required>
+				<input type="text" name="upcCommunitySupport" class="form-control" id="communitySupportField" placeholder="Enter Your Answer" maxlength="200">
 			</div>
 
 			<div class="ediv">
 				<label for="sustainabilityField">8. Sustainability & Maintenance: How will the site or building be maintained going forward? Share a detailed plan - who will be responsible?<font color="red"> *</font></label>
-				<input type="text" name="upcSustainability" class="form-control" id="sustainabilityField" placeholder="Enter Your Answer" maxlength="200" required>
+				<input type="text" name="upcSustainability" class="form-control" id="sustainabilityField" placeholder="Enter Your Answer" maxlength="200">
 			</div>
 
 			<div class="ediv">
 				<label for="projectGoalsField">9. How does your project meet the goals outlined in the Community Preservation Plan and Boston 2030? If you are applying for historic preservation funds, share the project's significance and how it contributes to the character of your neighborhood.<font color="red"> *</font></label>
-				<input type="text" name="upcProjectGoals" class="form-control" id="projectGoalsField" placeholder="Enter Your Answer" maxlength="200" required>
+				<input type="text" name="upcProjectGoals" class="form-control" id="projectGoalsField" placeholder="Enter Your Answer" maxlength="200">
 			</div>
 
 			<div class="ediv">
 				<label for="budgetExplanationField">10. Budget Explanation: feel free to share any unusual circumstances, budget details you'd like to explain, or information about additional fundraising.<font color="red"> *</font></label>
-				<input type="text" name="upcBudgetExplanation" class="form-control" id="budgetExplanationField" placeholder="Enter Your Answer" maxlength="200" required>
+				<input type="text" name="upcBudgetExplanation" class="form-control" id="budgetExplanationField" placeholder="Enter Your Answer" maxlength="200">
 			</div>
 
 
@@ -347,19 +348,19 @@ if(isset($_POST['submitCpaBtn']))
 			<div class="ediv">
 				<label for="propertyControlField">Property Control: If you do not own the property, upload an agreement with the owner that gives you permission to implement the project and outlines who will receive funds, hire and manage contractors, and do ongoing maintenance.<font color="red"> *</font></label>
 				
-				<input type="file" name="upcUploadPropertyControl" id="propertyControlField" required>
+				<input type="file" name="upcUploadPropertyControl" id="propertyControlField">
 			</div>
 
 			<div class="ediv">
 				<label for="councilSupportField">City Council Support: upload a letter from your district councilor supporting the project. <font color="red"> *</font></label></br>
 				
-				<input type="file" name="upcUploadCouncilSupport" id="councilSupportField" required>
+				<input type="file" name="upcUploadCouncilSupport" id="councilSupportField">
 			</div>
 
 			<div class="ediv">
 				<label for="communitySupportField">Community Support: if you have a petition signed by neighbors who are excited about the project, please upload.<font color="red"> *</font></label>
 				
-				<input type="file" name="upcUploadCommunitySupport" id="communitySupportField" required>
+				<input type="file" name="upcUploadCommunitySupport" id="communitySupportField">
 			</div>
 
 			<h4 style="width: 300px; background-color: #071822; color: #fff; padding: 10px; border-radius: 0px 0px 25px 0px; margin-top: 25px; margin-bottom: 25px;">Project Visuals</h4>
@@ -367,20 +368,20 @@ if(isset($_POST['submitCpaBtn']))
 			<div class="ediv">
 				<label for="appearanceField">Current appearance: upload ONE photo of your site/facility/resource.<font color="red"> *</font></label></br>
 				
-				<input type="file" name="upcUploadAppearance" id="appearanceField" required>
+				<input type="file" name="upcUploadAppearance" id="appearanceField">
 			</div>
 
 			<div class="ediv">
 				<label for="designField">Design: upload ONE design drawing.<font color="red"> *</font></label></br>
 				
-				<input type="file" name="upcUploadDesign" id="designField" required>
+				<input type="file" name="upcUploadDesign" id="designField">
 			</div>
 
 
 			<div class="ediv">
 				<label for="resultField">Finished result: upload a rendering of what you hope your completed project will look like, if you have one.<font color="red"> *</font></label></br>
 				
-				<input type="file" name="upcUploadResult" id="resultField" required>
+				<input type="file" name="upcUploadResult" id="resultField">
 			</div>
 			
 
@@ -393,25 +394,25 @@ if(isset($_POST['submitCpaBtn']))
 			<div class="ediv">
 				<label for="budgetField">Budget:<font color="red"> *</font></label></br>
 				
-				<input type="file" name="upcUploadBudget" id="budgetField" required>
+				<input type="file" name="upcUploadBudget" id="budgetField">
 			</div>
 
 			<div class="ediv">
 				<label for="irsField">Most recent Form 990 or IRS submission for applicant organization:<font color="red"> *</font></label></br>
 				
-				<input type="file" name="upcUploadIRS" id="irsField" required>
+				<input type="file" name="upcUploadIRS" id="irsField">
 			</div>
 
 			<div class="ediv">
 				<label for="profitField">Profit & Loss statement for last full year:<font color="red"> *</font></label></br>
 				
-				<input type="file" name="upcUploadProfit" id="profitField" required>
+				<input type="file" name="upcUploadProfit" id="profitField">
 			</div>
 
 			<div class="ediv">
 				<label for="balanceField">Balance Statement:<font color="red"> *</font></label></br>
 				
-				<input type="file" name="upcUploadBalance" id="balanceField" required>
+				<input type="file" name="upcUploadBalance" id="balanceField">
 			</div>
 			
 
@@ -425,7 +426,7 @@ if(isset($_POST['submitCpaBtn']))
 
 			
 
-			<input type="submit" name="submitCpaBtn" class="btn btn-primary" style="border-radius: 10px; padding-left: 35px; padding-right: 35px; margin-top: 25px; background-color: #071822; color: #fff; font-size: 20px;" value="Submit" onclick="errorFunction();">
+			<input type="submit" name="submitCpaBtn" id="submitCpaBtn" class="btn btn-primary" style="border-radius: 10px; padding-left: 35px; padding-right: 35px; margin-top: 25px; background-color: #071822; color: #fff; font-size: 20px;" value="Submit">
 			
 
 		</form>

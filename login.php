@@ -39,8 +39,8 @@ include_once 'partials/parseLogin.php';
  			</div>
 
  			<button type="submit" name="loginBtn" class="btn btn-primary" style="padding-left: 35px; padding-right: 35px;">Sign in</button>
+ 			
 
- 			<a href="forgot_password.php" style="float: right;">Forgot Password?</a>
 
 		</form>
 

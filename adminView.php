@@ -119,55 +119,62 @@ if(isset($_POST['approveBtn'])) {
 		
 		<form action="" method="POST" enctype="multipart/form-data">
 
+			<p>This Eligibility Form is required to apply for Community Preservation funds for affordable housing, historic preservation, and parks, and open space, and outdoor recreation captial projects.<br/>
+			Please contact us if you need any assistance or have questions. Staff email & phone numbers are at the end of this form.<br/>
+			Eligibility form DEADLINE: Housing - Friday, August 24, 2018 / Open Space & Preservation - Friday, September 7, 2018.<br/>
+			There are sections below for each CPA category; you will be directed to the section for your project: historic preservation; affordable housing; OR open space.</p>
+
+			<p style="color: red;">* Required</p>
+
 			<div style="display: none;">
 				<label for="idField">Form ID:<font color="red"> *</font></label>
 				<input type="text" name="upid" class="form-control" id="idField" value="<?php echo $id; ?>">
 			</div>
 
 			<div class="form-group">
-				<label for="emailField">Email Address:</label>
+				<label for="emailField">Email Address:<font color="red"> *</font></label>
 				<input type="text" name="upemail" class="form-control" id="emailField" value="<?php echo $email; ?>" readonly>
 			</div>
 
 			<h4 style="width: 300px; background-color: #071822; color: #fff; padding: 10px; border-radius: 0px 0px 25px 0px; margin-top: 25px; margin-bottom: 25px;">Summary Details</h4>
 
 			<div class="form-group">
-				<label for="projectField">Project Name:</label>
+				<label for="projectField">Project Name:<font color="red"> *</font></label>
 				<input type="text" name="upprojectName" class="form-control" id="projectField" value="<?php echo $projectName; ?>"readonly>
 			</div>
 
 			<div class="form-group">
-				<label for="descriptionField">Short Project Description:</label>
+				<label for="descriptionField">Short Project Description:<font color="red"> *</font></label>
 				<input type="text" name="upshortProjectDescription" class="form-control" id="emailField" value="<?php echo $shortProjectDescription; ?>"readonly>
 			</div>
 
 			<div class="form-group">
-				<label for="addressField">Project Street Address:</label>
+				<label for="addressField">Project Street Address:<font color="red"> *</font></label>
 				<input type="text" name="upprojectStreetAddress" class="form-control" id="emailField" value="<?php echo $projectStreetAddress; ?>"readonly>
 			</div>
 
 			<div class="form-group">
-				<label for="neighborhoodField">Project Neighborhood:</label>
+				<label for="neighborhoodField">Project Neighborhood:<font color="red"> *</font></label>
 				<input type="text" name="upprojectNeighborhood" class="form-control" id="neighborhoodField" value="<?php echo $projectNeighborhood; ?>"readonly>
 			</div>
 
 			<div class="form-group">
-				<label for="zipField">Project Zip-Code:</label>
+				<label for="zipField">Project Zip-Code:<font color="red"> *</font></label>
 				<input type="text" name="projectZip" class="form-control" id="zipField" value="<?php echo $projectZip; ?>"readonly>
 			</div>
 
 			<div class="form-group">
-				<label for="appOrgField">Applicant Organization:</label>
+				<label for="appOrgField">Applicant Organization:<font color="red"> *</font></label>
 				<input type="text" name="upapplicantOrg" class="form-control" id="appOrgField" value="<?php echo $applicantOrg; ?>"readonly>
 			</div>
 
 			<div class="form-group">
-				<label for="contactField">Contact Person & Title:</label>
+				<label for="contactField">Contact Person & Title:<font color="red"> *</font></label>
 				<input type="text" name="upcontactPersonTitle" class="form-control" id="contactField" value="<?php echo $contactPersonTitle; ?>"readonly>
 			</div>
 
 			<div class="form-group">
-				<label for="phoneNumberField">Phone Number:</label>
+				<label for="phoneNumberField">Phone Number:<font color="red"> *</font></label>
 				<input type="text" name="upphoneNumber" class="form-control" id="phoneNumberField" value="<?php echo $phoneNumber; ?>"readonly>
 			</div>
 
@@ -176,32 +183,32 @@ if(isset($_POST['approveBtn'])) {
 			<h4 style="width: 300px; background-color: #071822; color: #fff; padding: 10px; border-radius: 0px 0px 25px 0px; margin-top: 25px; margin-bottom: 25px;">Funding Request</h4>
 
 			<div class="form-group">
-				<label for="amountRequestedField">Amount Requested:</label>
+				<label for="amountRequestedField">Amount Requested:<font color="red"> *</font></label>
 				<input type="text" name="upamountRequested" class="form-control" id="amountRequestedField" value="<?php echo $amountRequested; ?>" readonly>
 			</div>
 
 			<div class="form-group">
-				<label for="totalProjectCostField">Total Project Cost:</label>
+				<label for="totalProjectCostField">Total Project Cost:<font color="red"> *</font></label>
 				<input type="text" name="uptotalProjectCost" class="form-control" id="totalProjectCostField" value="<?php echo $totalProjectCost; ?>" readonly>
 			</div>
 
 			<div class="form-group">
-				<label for="fundingNeedField">Why is Funding Needed:</label>
+				<label for="fundingNeedField">Why is Funding Needed:<font color="red"> *</font></label>
 				<input type="text" name="upfundingNeed" class="form-control" id="fundingNeedField" value="<?php echo $fundingNeed; ?>" readonly>
 			</div>
 
 			<div class="form-group">
-				<label for="fundingSourcesField">Other Funding Sources or in-kind support(not whether received, decision pending, or will apply):</label>
+				<label for="fundingSourcesField">Other Funding Sources or in-kind support(not whether received, decision pending, or will apply):<font color="red"> *</font></label>
 				<input type="text" name="upfundingSources" class="form-control" id="fundingSourcesField" value="<?php echo $fundingSources; ?>" readonly>
 			</div>
 
 			<div class="form-group">
-				<label for="checkfundingRequestField">Project Funding Request is for(check all that apply):</label>
+				<label for="checkfundingRequestField">Project Funding Request is for(check all that apply):<font color="red"> *</font></label>
 				<input type="text" name="upcheckfundingRequest" class="form-control" id="checkfundingRequestField" value="<?php echo $checkfundingRequest; ?>" readonly>
 			</div>
 
 			<div class="form-group">
-				<label for="constructionDesignField">What do you hope to do? Describe construction or design details:</label>
+				<label for="constructionDesignField">What do you hope to do? Describe construction or design details:<font color="red"> *</font></label>
 				<input type="text" name="upconstructionDesign" class="form-control" id="constructionDesignField" value="<?php echo $constructionDesign; ?>" readonly>
 			</div>
 
@@ -212,12 +219,12 @@ if(isset($_POST['approveBtn'])) {
 			All completed projects using CPA funds will require a deed restriction, for housing affordability, conservation land, or as a historic resource in perpetuity. You can read more about how to do this in the Community Preservation Plan appendix.</p>
 
 			<div class="form-group">
-				<label for="propertyOwnerField">Who is the property owner and manager?</label>
+				<label for="propertyOwnerField">Who is the property owner and manager?<font color="red"> *</font></label>
 				<input type="text" name="uppropertyOwner" class="form-control" id="propertyOwnerField" value="<?php echo $propertyOwner; ?>" readonly>
 			</div>
 
 			<div class="ediv">
-				<label for="uploadAgreementField">Pleas upload an agreement with the owner aanswering the questions listed above or provide site control documentation of you are not the property owner.</label>
+				<label for="uploadAgreementField">Pleas upload an agreement with the owner aanswering the questions listed above or provide site control documentation of you are not the property owner.<font color="red"> *</font></label>
 		
 
 				<input style="padding: 5px; cursor: pointer; background-color:rgba(251, 77, 66, 0.6);color: #071822; font-weight: bold; border: 2px solid #071822; border-radius: 5px; text-align: center;"type="button" value="<?php echo $uploadAgreement; ?>" onclick="window.location.href='uploads/<?php echo $uploadAgreement; ?>'" />

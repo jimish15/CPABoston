@@ -20,13 +20,15 @@ include ("resource/formDB.php");
   		border: 1px solid #ddd;
   		padding: 8px;
   		text-align: left;
+  		color: white;
+  		
   		;
 	}
 
-	#eligibilityTable tr:nth-child(even){background-color: #f2f2f2;}
-	#eligibilityTable tr:nth-child(odd){background-color: #fff;}
+	#eligibilityTable tr:nth-child(even){background-color: #5D6D7E;}
+	#eligibilityTable tr:nth-child(odd){background-color: #85929E;}
 
-	#eligibilityTable tr:hover {background-color: #ddd;}
+	
 
 	#eligibilityTable th {
  		padding-top: 12px;
@@ -83,7 +85,7 @@ include ("resource/formDB.php");
 
 	}
 
-	.newEligibilityBtn:hover{background-color:rgba(251, 77, 66, 0.4);}
+	.newEligibilityBtn:hover{background-color:#F5B7B1;}
 
 	.newCpaBtn{
 		width: 100px;
@@ -93,16 +95,54 @@ include ("resource/formDB.php");
 		background-color:rgba(251, 77, 66, 0.6); 
 		color: #071822; font-weight: bold; 
 		border: 2px solid #071822; 
-		border-radius: 5px;  
+		border-radius: 10px;  
 		text-align: center; 
 		float: center;
-
+		color: white;
 
 
 
 	}
 
-	.newCpaBtn:hover{background-color:rgba(251, 77, 66, 0.4);}
+	.newCpaBtn:hover{background-color:#F5B7B1; color: black;}
+
+	.viewBtn{
+		width: 100%;
+		padding: 5px; 
+		cursor: pointer; 
+		font-size: 15px; 
+		background-color:rgba(40, 180, 99, 0.8); 
+		color: #071822; font-weight: bold; 
+		border: 2px solid #071822;  
+		border-radius: 10px;  
+		text-align: center; 
+		float: center;
+		color: white;
+
+		margin-top: 5px;
+
+	}
+
+	.viewBtn:hover{background-color:#ABEBC6; color: black; border: 2px solid #071822;}
+
+	.logoutBtn
+	{
+		width: 100px;
+		padding: 5px; 
+		cursor: pointer; 
+		font-size: 15px; 
+		background-color: #CB4335; 
+		color: #071822; font-weight: bold; 
+		border: 2px solid #071822; 
+		border-radius: 10px;  
+		text-align: center; 
+		float: center;
+		color: white;
+
+	}
+
+	.logoutBtn:hover{background-color:#F1948A; color: black;}
+
 
 
 
@@ -125,7 +165,7 @@ include ("resource/formDB.php");
 
 		<div>
 			
-			<a href="logout.php" style="float: right; margin-top: 20px;">Logout</a>
+			<a href="logout.php" style="float: right; margin-top: 20px;"><input type='submit' class='logoutBtn' value='Logout'></a>
 
 			<h1 class="lead" style="font-size: 40px; text-align: left;">Welcome <?php if(isset($_SESSION['username'])) echo $_SESSION['username']; ?></h1><hr>
 
@@ -169,7 +209,7 @@ include ("resource/formDB.php");
 					
 					<?php
 
-					$sel = "SELECT `id`, `projectName`, `email`, `eStatus`, `cStatus` FROM `eform` WHERE `email` = \"$email\"";
+					$sel = "SELECT `id`, `projectName`, `email`, `eStatus`, `cStatus`, `cEmail`, `cProjectName`, `cProjectNeighborhood`, `cProjectZip`, `cApplicantOrg`, `cContactPersonTitle`, `cPhoneNumber`, `cPickCategory`, `cAmountRequested`, `cTotalProjectCost`, `cShortProjectDescription2`, `cProjectSummary`, `cNeedsAssessment`, `cProjectTimeline`, `cExperienceCapacity`, `cOrganizationalPlan`, `cPublicBenefit`, `cCommunitySupport`, `cSustainability`, `cProjectGoals`, `cBudgetExplanation`, `cUploadPropertyControl`, `cUploadCouncilSupport`, `cUploadCommunitySupport`, `cUploadAppearance`, `cUploadDesign`, `cUploadResult`, `cUploadBudget`, `cUploadIRS`, `cUploadProfit`, `cUploadBalance` FROM `eform` WHERE `email` = \"$email\"";
 
 					$qrydisplay = mysqli_query($connect, $sel);
 
@@ -181,7 +221,77 @@ include ("resource/formDB.php");
 						$eStatus = $row['eStatus'];
 						$cStatus = $row['cStatus'];
 
-						echo "<tr><td>".$id."</td><td>".$projectName."</td><td>".$email."</td><td><a href='view.php?view=$id'>View Eligibility Form</a></td><td>".$eStatus."</td><td><a href='cpaForm.php?cpaForm=$id'><input type='submit' class='newCpaBtn' value='CPA Form'></a></td><td><a href='cpaView.php?cpaView=$id'>View CPA Form</a></td><td>".$cStatus."</td></tr>";
+						$cEmail = $row['cEmail'];
+						$cProjectName = $row['cProjectName'];
+						$cProjectNeighborhood = $row['cProjectNeighborhood'];
+						$cProjectZip = $row['cProjectZip'];
+						$cApplicantOrg = $row['cApplicantOrg'];
+						$cContactPersonTitle = $row['cContactPersonTitle'];
+						$cPhoneNumber = $row['cPhoneNumber'];
+						$cPickCategory = $row['cPickCategory'];
+						$cAmountRequested = $row['cAmountRequested'];
+						$cTotalProjectCost = $row['cTotalProjectCost'];
+						$cShortProjectDescription2 = $row['cShortProjectDescription2'];
+						$cProjectSummary = $row['cProjectSummary'];
+						$cNeedsAssessment= $row['cNeedsAssessment'];
+						$cProjectTimeline = $row['cProjectTimeline'];
+						$cExperienceCapacity = $row['cExperienceCapacity'];
+						$cOrganizationalPlan = $row['cOrganizationalPlan'];
+						$cPublicBenefit = $row['cPublicBenefit'];
+						$cCommunitySupport = $row['cCommunitySupport'];
+						$cSustainability = $row['cSustainability'];
+						$cProjectGoals = $row['cProjectGoals'];
+						$cBudgetExplanation = $row['cBudgetExplanation'];
+						$cUploadPropertyControl = $row['cUploadPropertyControl'];
+						$cUploadCouncilSupport = $row['cUploadCouncilSupport'];
+						$cUploadCommunitySupport = $row['cUploadCommunitySupport'];
+						$cUploadAppearance = $row['cUploadAppearance'];
+						$cUploadDesign = $row['cUploadDesign'];
+						$cUploadResult = $row['cUploadResult'];
+						$cUploadBudget = $row['cUploadBudget'];
+						$cUploadIRS = $row['cUploadIRS'];
+						$cUploadProfit = $row['cUploadProfit'];
+						$cUploadBalance = $row['cUploadBalance'];
+
+						if ($eStatus == "Rejected" || $eStatus == '') 
+						{
+							echo "<tr><td>".$id."</td>
+							<td>".$projectName."</td>
+							<td>".$email."</td>
+							<td><a href='view.php?view=$id'><input type='submit' class='viewBtn' value='View Eligibility Form'></a></td>
+							<td>".$eStatus."</td>
+							<td></td>
+							<td></td>
+							<td>".$cStatus."</td></tr>";
+						}
+						else
+						{
+							if($cEmail == '' || $cProjectName == '' || $cProjectNeighborhood == '' || $cProjectZip == '' || $cApplicantOrg == '' || $cContactPersonTitle == '' || $cPhoneNumber == '' || $cPickCategory == '' || $cAmountRequested == '' || $cTotalProjectCost == '' || $cShortProjectDescription2 == '' || $cProjectSummary == '' || $cNeedsAssessment == '' || $cProjectTimeline == '' || $cExperienceCapacity == '' || $cOrganizationalPlan == '' || $cPublicBenefit == '' || $cCommunitySupport == '' || $cSustainability == '' || $cProjectGoals == '' || $cBudgetExplanation == '' || $cUploadPropertyControl == '' || $cUploadCouncilSupport == '' || $cUploadCommunitySupport == '' || $cUploadAppearance == '' || $cUploadDesign == '' || $cUploadResult == '' || $cUploadBudget == '' || $cUploadIRS == '' || $cUploadProfit == '' || $cUploadBalance == '')
+							{
+								echo "<tr><td>".$id."</td>
+								<td>".$projectName."</td>
+								<td>".$email."</td>
+								<td><a href='view.php?view=$id'><input type='submit' class='viewBtn' value='View Eligibility Form'></a></td>
+								<td>".$eStatus."</td>
+								<td><a href='cpaForm.php?cpaForm=$id'><input type='submit' class='newCpaBtn' value='CPA Form'></a></td>
+								<td></td>
+								<td>".$cStatus."</td></tr>";
+							}
+							else
+							{
+								echo "<tr><td>".$id."</td>
+								<td>".$projectName."</td>
+								<td>".$email."</td>
+								<td><a href='view.php?view=$id'><input type='submit' class='viewBtn' value='View Eligibility Form'></a></td>
+								<td>".$eStatus."</td>
+								<td><a href='cpaForm.php?cpaForm=$id'><input type='submit' class='newCpaBtn' value='CPA Form'></a></td>
+								<td><a href='cpaView.php?cpaView=$id'><input type='submit' class='viewBtn' value='View CPA Form'></a></td>
+								<td>".$cStatus."</td></tr>";
+							}
+							
+						}
+
+				
 
 					}
 
