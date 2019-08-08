@@ -182,5 +182,5 @@
 ## Demo Video
 	- https://www.youtube.com/watch?v=Pr-JMqTkdEM
 
-Senior Project, Summer 2019
-Wentworth Institute of Technology
+### Senior Project, Summer 2019
+### Wentworth Institute of Technology
